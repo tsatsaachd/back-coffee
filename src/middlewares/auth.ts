@@ -5,7 +5,11 @@ interface Payload {
   userId: string;
 }
 
-export const authMiddleware = (req: Request, res: Response, next: NextFunction) => {
+export const authMiddleware = (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
   // Get the token from the request headers
   const authHeader = req.headers.authorization;
   const token = authHeader?.split(" ")[1];
@@ -21,7 +25,7 @@ export const authMiddleware = (req: Request, res: Response, next: NextFunction) 
 
     // Add the decoded payload to the request object for future use
     req.userId = decodedToken.userId;
-
+    //masd,mfna.sdmfnadmfnas,mdfna,sdmfn
     // Call the next middleware or route handler
     next();
   } catch (error) {
